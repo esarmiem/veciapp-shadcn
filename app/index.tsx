@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { View } from 'react-native';
+import { Search } from 'lucide-react-native'; 
 import Animated, { FadeInUp, FadeOutDown, LayoutAnimationConfig } from 'react-native-reanimated';
 import { Info } from '~/lib/icons/Info';
 import { Avatar, AvatarFallback, AvatarImage } from '~/components/ui/avatar';
 import { Button } from '~/components/ui/button';
+import { Input } from '~/components/ui/input';
 import {
   Card,
   CardContent,
@@ -90,6 +92,18 @@ export default function Screen() {
           </Button>
         </CardFooter>
       </Card>
+      <View className="relative w-full max-w-sm">
+        <View className="absolute left-3 top-2.5 z-10">
+          <Search size={20} className="text-muted-foreground" />
+        </View>
+        <Input
+          placeholder='Busca otro personaje...'
+          aria-labelledby='inputLabel'
+          aria-errormessage='inputError'
+          className='w-full pl-10'
+        />
+      </View>
     </View>
+    
   );
 }
